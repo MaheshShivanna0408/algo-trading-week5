@@ -1,0 +1,115 @@
+{
+  "date_run": "2026-11-15",
+  "note": "Values copied from the printed output of code/G22_Week5_Models_v1.0.ipynb (run on Colab, T4 GPU)",
+  "model_1_direction": {
+    "model": "M0 baseline: logistic regression (scaled technical features)",
+    "best_C": 0.001,
+    "rows": {
+      "train": 57067,
+      "validation": 7530,
+      "test": 9390
+    },
+    "test_up_share": 0.5243,
+    "tuning": [
+      {
+        "C": 0.001,
+        "val_accuracy": 0.4985
+      },
+      {
+        "C": 0.01,
+        "val_accuracy": 0.4963
+      },
+      {
+        "C": 0.1,
+        "val_accuracy": 0.498
+      },
+      {
+        "C": 1.0,
+        "val_accuracy": 0.4981
+      },
+      {
+        "C": 10.0,
+        "val_accuracy": 0.498
+      }
+    ],
+    "baseline_majority_class": {
+      "predicts": "up",
+      "accuracy": 0.5243,
+      "precision": 0.5243,
+      "recall": 1.0,
+      "f1": 0.6879,
+      "roc_auc": null
+    },
+    "logistic_regression": {
+      "accuracy": 0.5308,
+      "precision": 0.5346,
+      "recall": 0.8121,
+      "f1": 0.6447,
+      "roc_auc": 0.5209
+    },
+    "confusion_matrix": {
+      "actual_down": {
+        "pred_down": 986,
+        "pred_up": 3481
+      },
+      "actual_up": {
+        "pred_down": 925,
+        "pred_up": 3998
+      }
+    },
+    "kpi_check": {
+      "accuracy": {
+        "target": 0.56,
+        "result": 0.5308,
+        "pass": false
+      },
+      "precision": {
+        "target": 0.6,
+        "result": 0.5346,
+        "pass": false
+      },
+      "roc_auc": {
+        "target": 0.6,
+        "result": 0.5209,
+        "pass": false
+      }
+    },
+    "beats_baseline": true
+  },
+  "model_2_sentiment": {
+    "test_sentences": 968,
+    "train_sentences": 3870,
+    "tfidf_baseline": {
+      "accuracy": 0.7521,
+      "macro_f1": 0.7145
+    },
+    "finbert": {
+      "accuracy": 0.875,
+      "macro_f1": 0.8668,
+      "target": 0.85,
+      "pass": true
+    },
+    "finbert_confusion_matrix": {
+      "true_negative": [
+        117,
+        3,
+        1
+      ],
+      "true_neutral": [
+        31,
+        482,
+        62
+      ],
+      "true_positive": [
+        4,
+        20,
+        248
+      ],
+      "columns": [
+        "pred_negative",
+        "pred_neutral",
+        "pred_positive"
+      ]
+    }
+  }
+}

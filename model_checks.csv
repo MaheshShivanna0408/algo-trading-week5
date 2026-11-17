@@ -1,0 +1,8 @@
+check,result,detail
+No leakage: train dates before validation dates,PASS,2017-12-29 < 2018-01-02
+No leakage: validation dates before test dates,PASS,2018-12-31 < 2019-01-02
+Inputs: no missing or infinite feature values,PASS,
+Target: only 0 and 1,PASS,
+Rows: train + validation + test = all model rows,PASS,
+Outputs: metrics between 0 and 1,PASS,
+Reproducible: same accuracy when run again,PASS,

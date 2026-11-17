@@ -1,0 +1,6 @@
+# Datasets and large outputs stay off GitHub (Data Management Plan)
+*.csv
+!results/model_checks.csv
+data/
+.ipynb_checkpoints/
+.env
